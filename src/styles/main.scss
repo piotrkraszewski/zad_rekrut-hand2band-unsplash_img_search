@@ -1,0 +1,17 @@
+
+// bootstrap
+// $icon-font-path: "/fonts/bootstrap/";
+@import '../../node_modules/bootstrap/scss/bootstrap.scss'; 
+
+//helpers
+@import './helpers/variables';
+
+@import './layout/app';
+@import './layout/background';
+@import './layout/logo';
+@import './layout/mainPageSearch';
+@import './layout/movieSearchbarResults';
+@import './layout/StartPageCards';
+@import './layout/startPageSearchbar';
+
+@import './layout/footer';
