@@ -1,18 +1,14 @@
-
 // bootstrap
-// $icon-font-path: "/fonts/bootstrap/";
 @import '../../node_modules/bootstrap/scss/bootstrap.scss'; 
 
 //helpers
 @import './helpers/variables';
+@import './helpers/mixins';
 
 @import './layout/app';
 @import './layout/background';
-@import './layout/logo';
 @import './layout/Searchbar';
 @import './layout/StartPage';
 @import './layout/SearchSuggestions';
 @import './layout/GalleryCards';
 @import './layout/GallerySearchbar';
-
-@import './layout/footer';

@@ -1,17 +1,11 @@
 .startPage {
-  position: absolute;
-  z-index: 1;
-
-  // center positioning
-  width: 100%;
-  margin: 20px auto;
-  padding: 0 7%;
+  @include pageSettings();
 
   .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    @include containerSettings;
 
     h1 {
+      margin-top: 20px;
       font-size:35px;
       font-weight: bold;
       padding: 0;

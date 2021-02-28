@@ -2,7 +2,7 @@ import GalleryCards from './GalleryCards'
 import GallerySearchbar from './GallerySearchbar'
 import { motion } from "framer-motion"
 
-export default function StartPage() {
+export default function Gallery() {
   return (
     <motion.div 
       initial={{ opacity: 0 }}

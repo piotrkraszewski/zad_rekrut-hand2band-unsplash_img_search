@@ -1,0 +1,61 @@
+@mixin pageSettings() {
+  position: absolute;
+
+  // center positioning
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 7%;
+}
+
+@mixin containerSettings() {
+  // centers content
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+@mixin displayFixedAndCenter {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@mixin searchBarMixin($searchBarHeight, $borderRadius, $mobileBorderRadius) {
+  display: inline-flex;
+  flex-wrap: wrap;
+
+  color: black;
+  background-color: white;
+  width: 100%;
+  height: $searchBarHeight;
+  border: solid 1px white;
+  border-radius: $borderRadius;
+
+  @media only screen and (max-width: 575px) {
+    border-radius: $mobileBorderRadius;
+  }
+
+  img {
+    width: 18px;
+    @media only screen and (max-width: 575px) {
+      width: 0px;
+    }
+  }
+
+  form {
+    flex-grow: 1;
+
+    input {
+      padding-left: 10px;
+      width: 99%;
+      height: $searchBarHeight - 2px;
+      border: none;
+      &:focus {
+        outline-width: 0;
+      }
+
+      @media only screen and (max-width: 575px) {
+        padding-left: 0;
+      }
+    }
+  }
+}

@@ -6,13 +6,13 @@ import { NOT_FOUND_POSTER_W500 } from '../../utilities/Consts'
 import no_image from '../../images/no_image.png'
 
 
-export default function FullscreenSearch() {
+export default function GalleryCards() {
   const {searchbarText, suggestions, setMovieID} = useContext(AppContext)
 
   return (
-    <div className='StartPageCards'>
+    <div className='galleryCards'>
 
-    <div className='Container'>
+    <div className='container'>
       <p className='title'>
         {!searchbarText && 'Trending Now'}
       </p>

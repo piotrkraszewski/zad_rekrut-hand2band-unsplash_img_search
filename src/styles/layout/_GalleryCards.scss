@@ -1,15 +1,8 @@
-.StartPageCards{
-  position: absolute;
-  width: 100%;
+.galleryCards{
+  @include pageSettings();
 
-  // center positioning
-  margin: 0 auto;
-  padding: 0 7%;
-
-  .Container{
-    // centers content
-    margin: 0 auto;
-    max-width: 1400px; // max with that all posters take on page
+  .container{
+    @include containerSettings;
   
     .title{
       margin-top: 80px;
@@ -43,7 +36,7 @@
         }
     
         p {
-          color: $limeGreen;
+          color: $white;
           padding: 8px;
           font-weight: bold;
           font-family: $lato;
