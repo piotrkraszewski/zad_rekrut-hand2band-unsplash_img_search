@@ -3,13 +3,14 @@ import { AppContext } from '../../Contexts/AppContext'
 
 
 export default function GotoOtherRoutesHooks() {
-  const { searchbarText, setSearchbarText, oldSearchbarText,  setMovieID, pushToHistory, setAllMoviesData, fetchPopularMoviesOnStartPage, setShowSuggestions} = useContext(AppContext)
+  const { searchbarText, setSearchbarText, oldSearchbarText,  setMovieID, pushToHistory, setAllMoviesData, fetchPopularMoviesOnStartPage, setShowSuggestions, search} = useContext(AppContext)
 
-  function selectedSuggestion(item){
-    if (searchbarText && item !== undefined) {
-      pushToHistory(`/${item}`)
+  function selectedSuggestion(text){
+    if (searchbarText && text !== undefined) {
+      pushToHistory(`/${text}`)
       setSearchbarText(oldSearchbarText)
       setShowSuggestions(false)
+      search(text)
       // setMovieID(item[1])
     }
   }
