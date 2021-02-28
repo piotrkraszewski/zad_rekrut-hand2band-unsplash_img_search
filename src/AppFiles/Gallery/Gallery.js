@@ -1,5 +1,5 @@
-import StartPageCard from './StartPageCards'
-import StartPageSearch from './StartPageSearchbar'
+import GalleryCards from './GalleryCards'
+import GallerySearchbar from './GallerySearchbar'
 import { motion } from "framer-motion"
 
 export default function StartPage() {
@@ -10,8 +10,8 @@ export default function StartPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
     > 
-      <StartPageSearch />
-      <StartPageCard />
+      <GallerySearchbar />
+      <GalleryCards />
     </motion.div> 
   )
 }

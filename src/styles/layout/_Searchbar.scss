@@ -1,0 +1,37 @@
+.searchBar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  $searchBarHeight: 50px;
+
+  color: black;
+  background-color: white;
+  width: 100%;
+  height: $searchBarHeight;
+  border: solid 1px white;
+  border-radius: 4px;
+
+  img {
+    width: 18px;
+    @media only screen and (max-width: 575px) {
+      width: 0px;
+    }
+  }
+
+  form {
+    flex-grow: 1;
+
+    input {
+      padding-left: 10px;
+      width: 99%;
+      height: $searchBarHeight - 2px;
+      border: none;
+      &:focus {
+        outline-width: 0;
+      }
+
+      @media only screen and (max-width: 575px) {
+        padding-left: 0;
+      }
+    }
+  }
+}

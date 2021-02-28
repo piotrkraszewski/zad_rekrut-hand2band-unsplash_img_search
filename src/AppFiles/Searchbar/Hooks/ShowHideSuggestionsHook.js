@@ -1,10 +1,8 @@
-import { AppContext } from '../../../Contexts/AppContext'
-import { MovieSearchbarContext } from '../../../Contexts/MovieSearchbarContext'
+import { AppContext } from '../../Contexts/AppContext'
 import { useEffect, useContext, useRef } from 'react'
 
-export default function ShowHideQuickSearchHook() {
-  const { searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText, showResInSearchBar } = useContext(AppContext)
-  const { setShowSuggestions } = useContext(MovieSearchbarContext)
+export default function ShowHideSuggestionsHook(props) {
+  const { searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText, showResInSearchBar, setShowSuggestions } = useContext(AppContext)
   const node = useRef()
 
   function hideOnOutsideClick(e) {
@@ -21,7 +19,7 @@ export default function ShowHideQuickSearchHook() {
     }
   }, [])
 
-  const OnMovieSearchBarClicked = async e => {
+  const OnSearchBarClicked = async e => {
     setShowSuggestions(true)
     if (searchbarText === '') {
       showResInSearchBar(oldSearchbarText)
@@ -30,5 +28,5 @@ export default function ShowHideQuickSearchHook() {
     }
   }
 
-  return [node, OnMovieSearchBarClicked]
+  return [node, OnSearchBarClicked]
 }

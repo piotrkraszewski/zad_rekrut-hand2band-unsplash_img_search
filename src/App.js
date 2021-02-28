@@ -8,8 +8,8 @@ import AppScroolbar from './utilities/Scroolbar/AppScrollbar'
 import { getMoviesDataToDisplayInSearch, getQueryData, getMovieData, createPictureSearchUrl, setInitMovieID, getAutoComplete } from './utilities/FetchFunctions'
 import { getCurrentPageUrl, getMovieIdFromLocationPathname } from './utilities/RoutesFunctions'
 import CalculateWindowHeightHook from './utilities/CalculateWindowHeightHook'
-import StartPage from './AppFiles/StartPage/StartPage'
-import MainPage from './AppFiles/MainPage/MainPage'
+import Gallery from './AppFiles/Gallery/Gallery'
+import StartPage from './AppFiles/StartPage'
 
 
 export default function App () {
@@ -70,6 +70,10 @@ const [autoCompltions, setAutoCompltions] = useState([])
     }
   }
 
+
+// ==== Searchbar State ====
+  const [showSuggestions, setShowSuggestions] = useState(false)
+  const [hoveredSuggestionIdx, setHoveredSuggestionIdx] = useState()
   
 // ==== END Search state and functions ====
 
@@ -103,7 +107,7 @@ const [autoCompltions, setAutoCompltions] = useState([])
     <div>
       <CalculateWindowHeightHook/>
       <AppContext.Provider 
-        value={{movieID, movieData, searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText, suggestions, setSuggestions,  onSearchbarTextChanging, allMoviesData, setAllMoviesData, setMovieID, showResInSearchBar, history, pushToHistory, autoCompltions}}
+        value={{movieID, movieData, searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText, suggestions, setSuggestions,  onSearchbarTextChanging, allMoviesData, setAllMoviesData, setMovieID, showResInSearchBar, history, pushToHistory, autoCompltions, showSuggestions, setShowSuggestions, hoveredSuggestionIdx, setHoveredSuggestionIdx}}
       >
         <AppScroolbar>
           <AnimatePresence exitBeforeEnter>
@@ -111,8 +115,8 @@ const [autoCompltions, setAutoCompltions] = useState([])
               location={location} 
               key={getCurrentPageUrl(location)}
             >
-              <Route exact path='/' render={() => <MainPage/>} />
-              <Route exact path={`/:${movieID}`} render={() => <StartPage/>} />
+              <Route exact path='/' render={() => <StartPage/>} />
+              <Route exact path={`/:${movieID}`} render={() => <Gallery/>} />
             </Switch>
           </AnimatePresence>
         </AppScroolbar>

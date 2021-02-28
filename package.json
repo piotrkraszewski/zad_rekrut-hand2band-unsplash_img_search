@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@n8tb1t/use-scroll-position": "^2.0.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -46,5 +45,6 @@
   "devDependencies": {
     "gh-pages": "^2.2.0",
     "imports-loader": "^0.8.0"
-  }
+  },
+  "proxy": "http://localhost:4000"
 }

@@ -2,10 +2,11 @@ import axios from 'axios'
 import { API_KEY, BASE_API_URL, POSTER_W500 } from './Consts'
 import { getMovieIdFromLocationPathname } from './RoutesFunctions'
 
+
 //==== Fetch autoComplition ====
 export async function getAutoComplete(input){
   const url = `https://unsplash.com/nautocomplete/${input}`
-  const response = await axios.get(url)
+  const response = await axios.get(/*'https://cors-anywhere.herokuapp.com/' + */ url)
   return response.data.autocomplete
 }
 

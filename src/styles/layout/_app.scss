@@ -1,11 +1,6 @@
 body {
-  background: black;
+  background: rgb(34, 34, 34);
   font-family: $lato;
   font-size: 18px;
+  color: $white;
 }
-
-// App move from top to bottom on opening site
-// didn't work nicely with  perfect-scrollbar
-// #app {
-//   animation: fadein ease-out 1.4s;
-// }

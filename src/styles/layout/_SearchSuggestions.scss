@@ -1,0 +1,39 @@
+.searchbar_ul {
+  color: $darkGrey;
+  background-color: white;
+  list-style-type: none;
+  margin-top: 5px;
+  border-radius: 4px;
+  padding: 0;
+
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+@mixin searchbar_basic_li {
+  padding: 3px 20px;
+  
+  p {
+    font-size: 17px;
+    margin: 4px 0;
+    align-self: center;
+  }
+}
+
+.searchbar_li {
+  @include searchbar_basic_li;
+
+  &:hover, &.active, &:focus {
+    cursor: pointer;
+    background-color: $midGrey;
+    border-radius: 5px;
+  }
+}
+
+.noResult{
+  @include searchbar_basic_li;
+  user-select: none;
+}
