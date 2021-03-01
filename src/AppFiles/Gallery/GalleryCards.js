@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import '../../styles/main.scss'
 import { AppContext } from '../Contexts/AppContext'
 import { NOT_FOUND_POSTER_W500 } from '../../utilities/Consts'
@@ -11,34 +12,33 @@ export default function GalleryCards() {
   return (
     <div className='galleryCards'>
 
-    <div className='container'>
       <p className='title'>
         {searchbarText}
       </p>
-      <div className='row'>
-
+      <ResponsiveMasonry
+        columnsCountBreakPoints={{475: 1, 575: 2, 1000: 3, 1800: 4}}
+      >
+        <Masonry>
         {imagesData.map((item, index) => 
           <div 
-            className='smallCard col-xl-2 col-md-3 col-4' 
-            key={index}
+            className='Card' 
+            key={index} 
+            onClick={() => setMovieID(item[1])}
           >
-            <div onClick={() => setMovieID(item[1])}>
-              <img 
-                src={item.regularImgQuality !== NOT_FOUND_POSTER_W500 
-                  ? item.regularImgQuality 
-                  : no_image}
-                alt={`poster ${index}`}
-              />
-              {item.tags.map(tag => 
-               <p>{tag}</p>
-              )}
-            </div>
+            <img 
+              src={item.regularImgQuality !== NOT_FOUND_POSTER_W500 
+                ? item.regularImgQuality 
+                : no_image}
+              alt={`poster ${index}`}
+            />
+            {item.tags.map(tag => 
+              <p>{tag}</p>
+            )}
           </div>
         )}
-        
-      </div>
-    </div>
+        </Masonry>
+      </ResponsiveMasonry>
 
-  </div>
+    </div>
   )
 }
