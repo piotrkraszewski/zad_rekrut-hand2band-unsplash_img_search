@@ -2,49 +2,72 @@
   @include pageSettings();
 
   .title{
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 8px;
     color: rgb(230, 230, 230);
-    font-size: large;
-    text-transform: uppercase;
+    font-size: xx-large;
+
+    &::first-letter{
+      text-transform: uppercase;
+    }
   
     @media only screen and (max-width: 575px) {
       margin-top: 55px;
     }
   }
-
-  .Card{
+  .cardContainer{
     padding: 2%;
-    
-    border-radius: 15px;
-    // background: rgba(0, 0, 0, 0.85);
-    transition: all .5s ease-in-out;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
 
-    &:hover {
-      transform: scale(1.03);
-      transition: all .3s ease-in-out;
-    }
-
-    img {
+    .Card{
+      border-radius: 15px;
+      background: rgb(231, 230, 230);
+      transition: all .5s ease-in-out;
+      display: inline-block;
       width: 100%;
-      border-radius: 15px 15px 0px 0px;
-      align-items: center;
-    }
+      height: 100%;
+  
+      &:hover {
+        transform: scale(1.03);
+        transition: all .3s ease-in-out;
+      }
+  
+      img {
+        width: 100%;
+        border-radius: 15px 15px 0px 0px;
+        align-items: center;
+      }
+      
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 5px;
+        
+        div{
+          flex-wrap: wrap;
+          background-color: rgb(204, 204, 204);
+          border-radius: 5px;
+          padding: 0 4px;
+          
+          p {
+            width: 100%;
+            color: rgb(87, 87, 87);
+            margin: 5px;
 
-    p {
-      color: $white;
-      padding: 8px;
-      font-weight: bold;
-      font-family: $lato;
-      font-size: 0.9em;
-      text-align: center;
-    }
-
-    @media (max-width: 475px) {
-      font-size: 0.7em;
+            font-weight: bold;
+            font-family: $lato;
+            font-size: 14px;
+            text-align: center;
+            &::first-letter{
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+      
+  
+      @media (max-width: 475px) {
+        font-size: 0.7em;
+      }
     }
   }
 }

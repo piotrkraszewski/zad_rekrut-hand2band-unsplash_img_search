@@ -7,34 +7,40 @@ import no_image from '../../images/no_image.png'
 
 
 export default function GalleryCards() {
-  const {searchbarText, imagesData, setMovieID} = useContext(AppContext)
+  const { imagesData, searchID} = useContext(AppContext)
 
   return (
     <div className='galleryCards'>
 
       <p className='title'>
-        {searchbarText}
+        {searchID}
       </p>
       <ResponsiveMasonry
         columnsCountBreakPoints={{475: 1, 575: 2, 1000: 3, 1800: 4}}
       >
         <Masonry>
-        {imagesData.map((item, index) => 
+        {imagesData.map((item) => 
+        <div className='cardContainer'>
           <div 
             className='Card' 
-            key={index} 
-            onClick={() => setMovieID(item[1])}
+            key={item.id} 
+            // onClick={() => setMovieID(item[1])}
           >
-            <img 
+            <img // implement error handeling here or delete
               src={item.regularImgQuality !== NOT_FOUND_POSTER_W500 
                 ? item.regularImgQuality 
                 : no_image}
-              alt={`poster ${index}`}
+              alt={`poster ${item.id}`}
             />
-            {item.tags.map(tag => 
-              <p>{tag}</p>
-            )}
+            <div>
+              {item.tags.map(tag => 
+                <div>
+                  <p>{tag}</p>
+                </div>
+              )}
+            </div>
           </div>
+        </div>
         )}
         </Masonry>
       </ResponsiveMasonry>

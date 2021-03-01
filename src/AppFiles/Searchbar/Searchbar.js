@@ -13,7 +13,7 @@ export default function StartPageSearch () {
   return (
     <>
       <div className='searchBar' ref={node}>
-        <img src={lupe} alt='lupe' />
+        <img src={lupe} alt='lupe'/>
         <form onSubmit={e => e.preventDefault()}>
           <input
             onChange={onSearchbarTextChanging}

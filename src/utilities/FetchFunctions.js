@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { API_KEY, BASE_API_URL } from './Consts'
-import { getMovieIdFromLocationPathname } from './RoutesFunctions'
+import { getSearchIdFromLocationPathname } from './RoutesFunctions'
 
 
-//==== Fetch autoComplition ====
+//==== Fetch autoComplitions ====
 export async function getAutoComplete(input){
   const url = `https://unsplash.com/nautocomplete/${input}`
   const response = await axios.get(
@@ -11,7 +11,6 @@ export async function getAutoComplete(input){
   )
   return response.data.autocomplete
 }
-
 
 //==== Fetch Images Data ====
 export async function getImagesData(value){
@@ -35,16 +34,9 @@ export async function getQueryData(url){
 }
 
 
-
-// probably not neede
-//==== Fetch one Image ====
-export async function getMovieData(movieID){
-  const response = await axios.get(`${BASE_API_URL}/3/movie/${movieID}?&${API_KEY}`)
-  return response.data
-}
-
-export function setInitMovieID(location){
-  const initMovieID = getMovieIdFromLocationPathname(location)
+//==== Track SearchID ====
+export function setInitSearchID(location){
+  const initMovieID = getSearchIdFromLocationPathname(location)
   if(initMovieID === '') return '157336' // interstellar
   return initMovieID
 }
