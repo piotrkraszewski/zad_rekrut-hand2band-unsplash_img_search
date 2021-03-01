@@ -24,7 +24,8 @@ export async function getImagesData(value){
     fullImgQuality: img.urls.full,
     name: img.user.name,
     username: img.user.username,
-    description: img.description
+    description: img.description,
+    tags: img.tags.map(tag => tag.title)
   }))
 }
 

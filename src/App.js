@@ -37,12 +37,12 @@ export default function App () {
 
 // ==== Fetch all Movies Data ====
 // suggestion to tu byly tylko fragmenty danych wyselekcjonowane
-  const [suggestions, setSuggestions] = useState([])
-  const [allMoviesData, setAllMoviesData] = useState([])
+  // const [suggestions, setSuggestions] = useState([])
+  const [imagesData, setImagesData] = useState([])
 
   const search = async (value) => {
     const imagesData = await getImagesData(value)
-    console.log(imagesData)
+    setImagesData(imagesData)
   }
 // ==== END Fetch all Movies Data ====
 
@@ -81,9 +81,9 @@ export default function App () {
   //   console.log({suggestions})
   // }, [suggestions])
 
-  // useEffect(() => {
-  //   console.log({movieData})
-  // }, [movieData])
+  useEffect(() => {
+    console.log({imagesData})
+  }, [imagesData])
 
   // useEffect(() => {
   //   console.log(`searchbarText: ${searchbarText}`)
@@ -97,7 +97,7 @@ export default function App () {
     <div>
       <CalculateWindowHeightHook/>
       <AppContext.Provider 
-        value={{movieID, movieData, searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText, suggestions, setSuggestions,  onSearchbarTextChanging, allMoviesData, setAllMoviesData, setMovieID, showResInSearchBar, history, pushToHistory, autoCompltions, showSuggestions, setShowSuggestions, hoveredSuggestionIdx, setHoveredSuggestionIdx, search}}
+        value={{movieID, movieData, searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText,   onSearchbarTextChanging, imagesData,  setImagesData, setMovieID, showResInSearchBar, history, pushToHistory, autoCompltions, showSuggestions, setShowSuggestions, hoveredSuggestionIdx, setHoveredSuggestionIdx, search}}
       >
         <AppScroolbar>
           <AnimatePresence exitBeforeEnter>
