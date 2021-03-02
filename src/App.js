@@ -22,12 +22,12 @@ export default function App () {
   const [imagesData, setImagesData] = useState([])
   const [searchID, setSearchID] = useState(setInitSearchID(location))
 
-  const getImages = async (value) => {
-    setImagesData(await getImagesData(value))
-  }
   
-  // Tracks current searchID to auto fetch page when We go to url 
+  // Tracks current searchID to fetch page when user types url
   useEffect(() => {
+    const getImages = async (value) => {
+      setImagesData(await getImagesData(value))
+    }
     getImages(searchID)
   }, [searchID])
 
@@ -43,7 +43,7 @@ export default function App () {
 // przydaloby sie zmienic nazwe na suggestions
   const [searchbarText, setSearchbarText] = useState('')
   const [oldSearchbarText, setOldSearchbarText] = useState('')
-  const [autoCompltions, setAutoCompltions] = useState([])
+  const [suggestions, setSuggestions] = useState([])
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [hoveredSuggestionIdx, setHoveredSuggestionIdx] = useState()
 
@@ -56,7 +56,7 @@ export default function App () {
   const showResInSearchBar = async (value) => {
     if (value.length === 0) setOldSearchbarText('')
     if (value.length >= 3) {
-      setAutoCompltions(await getAutoComplete(value))
+      setSuggestions(await getAutoComplete(value))
       setOldSearchbarText(value)
     }
   }
@@ -74,7 +74,7 @@ export default function App () {
     <div>
       <CalculateWindowHeightHook/>
       <AppContext.Provider 
-        value={{searchID, searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText, onSearchbarTextChanging, imagesData, setSearchID, showResInSearchBar, pushToHistory, autoCompltions, showSuggestions, setShowSuggestions, hoveredSuggestionIdx, setHoveredSuggestionIdx, getImages}}
+        value={{searchID, searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText, onSearchbarTextChanging, imagesData, setSearchID, showResInSearchBar, pushToHistory, suggestions, showSuggestions, setShowSuggestions, hoveredSuggestionIdx, setHoveredSuggestionIdx}}
       >
         <AppScroolbar>
           <AnimatePresence exitBeforeEnter>

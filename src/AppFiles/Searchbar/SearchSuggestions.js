@@ -5,7 +5,7 @@ import GotoOtherRoutesHooks from '../Hooks/GotoOtherRoutesHooks'
 
 
 export default function SearchSuggestions() {
-  const { searchbarText, autoCompltions, showSuggestions, hoveredSuggestionIdx } = useContext(AppContext)
+  const { searchbarText, suggestions, showSuggestions, hoveredSuggestionIdx } = useContext(AppContext)
 
   const [searchImages] = GotoOtherRoutesHooks()
     
@@ -14,8 +14,8 @@ export default function SearchSuggestions() {
       className={'searchbar_ul ' + 
       (showSuggestions && searchbarText.length >=3  && 'fadeIn')} 
     >
-      {autoCompltions.length > 0  //if
-      ? autoCompltions.map((item, idx) => 
+      {suggestions.length > 0  //if
+      ? suggestions.map((item, idx) => 
         <li 
           className={'searchbar_li ' + 
           (hoveredSuggestionIdx === idx && 'active')}
