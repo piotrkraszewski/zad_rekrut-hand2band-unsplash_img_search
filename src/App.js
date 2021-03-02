@@ -22,7 +22,7 @@ export default function App () {
   const [searchID, setSearchID] = useState(setInitSearchID(location))
   
   useEffect(() => {
-    search(searchID)
+    getImages(searchID)
     console.log(searchID)
   }, [searchID])
 
@@ -37,7 +37,7 @@ export default function App () {
 // ==== Fetch all Images Data ====
   const [imagesData, setImagesData] = useState([])
 
-  const search = async (value) => {
+  const getImages = async (value) => {
     const imagesData = await getImagesData(value)
     setImagesData(imagesData)
   }
@@ -79,7 +79,7 @@ export default function App () {
     <div>
       <CalculateWindowHeightHook/>
       <AppContext.Provider 
-        value={{searchID, searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText,   onSearchbarTextChanging, imagesData,  setImagesData,  setSearchID, showResInSearchBar, history, pushToHistory, autoCompltions, showSuggestions, setShowSuggestions, hoveredSuggestionIdx, setHoveredSuggestionIdx, search}}
+        value={{searchID, searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText, onSearchbarTextChanging, imagesData,  setSearchID, showResInSearchBar, pushToHistory, autoCompltions, showSuggestions, setShowSuggestions, hoveredSuggestionIdx, setHoveredSuggestionIdx, getImages}}
       >
         <AppScroolbar>
           <AnimatePresence exitBeforeEnter>

@@ -1,9 +1,8 @@
 import { useContext } from 'react'
 import { AppContext } from '../Contexts/AppContext'
 import '../../styles/main.scss'
-import ShowHideSuggestionsHook from './Hooks/ShowHideSuggestionsHook'
-import GotoOtherRoutesHooks from './Hooks/GotoOtherRoutesHooks'
-import KeyboardHooks from './Hooks/KeyboardHooks'
+import ShowHideSuggestionsHook from '../Hooks/ShowHideSuggestionsHook'
+import GotoOtherRoutesHooks from '../Hooks/GotoOtherRoutesHooks'
 import SearchSuggestions from './SearchSuggestions'
 import lupe from '../../images/lupe.svg'
 
@@ -11,13 +10,19 @@ export default function StartPageSearch () {
   const { searchbarText, oldSearchbarText, onSearchbarTextChanging } = useContext(AppContext)
 
   const [node, OnSearchBarClicked] = ShowHideSuggestionsHook()
-  const enterKeyPressed = KeyboardHooks()
-  const [selectedSuggestion] = GotoOtherRoutesHooks()
+  const [searchImages] = GotoOtherRoutesHooks()
+
+  function enterKeyPressed(e){
+    const code = e.keyCode || e.which
+    if (code === 13 /* enter key */) {
+      searchImages(searchbarText)
+    }
+  }
 
   return (
     <>
       <div className='searchBar' ref={node}>
-        <div onClick={() => selectedSuggestion(searchbarText)}>
+        <div onClick={() => searchImages(searchbarText)}>
         <img 
           src={lupe} 
           alt='lupe'

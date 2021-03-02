@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import '../../styles/main.scss'
 import { AppContext } from '../Contexts/AppContext'
-import { NOT_FOUND_POSTER_W500 } from '../../utilities/Consts'
 import locationIcon from '../../images/pin.svg'
 import { AnimatePresence, motion } from "framer-motion"
 

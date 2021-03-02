@@ -1,4 +1,4 @@
-import { AppContext } from '../../Contexts/AppContext'
+import { AppContext } from '../Contexts/AppContext'
 import { useEffect, useContext, useRef } from 'react'
 
 export default function ShowHideSuggestionsHook(props) {

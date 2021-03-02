@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { AppContext } from '../Contexts/AppContext'
 import '../../styles/main.scss'
-import GotoOtherRoutesHooks from './Hooks/GotoOtherRoutesHooks'
+import GotoOtherRoutesHooks from '../Hooks/GotoOtherRoutesHooks'
 
 
 export default function SearchSuggestions() {
