@@ -2,6 +2,7 @@
   @include pageSettings();
 
   .title{
+    padding-left: 7px;
     margin-top: 50px;
     margin-bottom: 8px;
     color: rgb(230, 230, 230);
@@ -19,12 +20,11 @@
     padding: 2%;
 
     .Card{
-      border-radius: 15px;
-      background: rgb(231, 230, 230);
+      border-radius: $borderRadius;
+      background: $BGwhite;
       transition: all .5s ease-in-out;
       display: inline-block;
       width: 100%;
-      height: 100%;
   
       &:hover {
         transform: scale(1.03);
@@ -34,19 +34,23 @@
       img {
         width: 100%;
         border-radius: 15px 15px 0px 0px;
-        align-items: center;
+      }
+
+      .roundCorners{
+        border-radius: $borderRadius;
       }
       
       div {
         display: flex;
         flex-wrap: wrap;
-        margin: 5px;
+        margin-left: 6px;
         
         div{
           flex-wrap: wrap;
           background-color: rgb(204, 204, 204);
           border-radius: 5px;
           padding: 0 4px;
+          margin: 5px;
           
           p {
             width: 100%;

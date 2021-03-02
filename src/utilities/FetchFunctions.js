@@ -23,7 +23,9 @@ export async function getImagesData(value){
     fullImgQuality: img.urls.full,
     name: img.user.name,
     username: img.user.username,
+    location: img.user.location,
     description: img.description,
+    profile_image: img.user.profile_image.medium,
     tags: img.tags.map(tag => tag.title)
   }))
 }
