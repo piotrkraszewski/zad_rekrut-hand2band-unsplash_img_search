@@ -7,7 +7,7 @@ import GotoOtherRoutesHooks from '../Hooks/GotoOtherRoutesHooks'
 export default function SearchSuggestions() {
   const { searchbarText, autoCompltions, showSuggestions, hoveredSuggestionIdx } = useContext(AppContext)
 
-  const [selectedSuggestion] = GotoOtherRoutesHooks()
+  const [searchImages] = GotoOtherRoutesHooks()
     
   return (
     <ul 
@@ -20,7 +20,7 @@ export default function SearchSuggestions() {
           className={'searchbar_li ' + 
           (hoveredSuggestionIdx === idx && 'active')}
 
-          onClick={()=> selectedSuggestion(item.query)}
+          onClick={()=> searchImages(item.query)}
           index={idx}
           key={idx}
         >

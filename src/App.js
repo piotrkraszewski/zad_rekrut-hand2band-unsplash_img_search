@@ -18,12 +18,17 @@ export default function App () {
   const pushToHistory = url => history.push(url)
 
 
-// ==== Tracks current searchID to auto fetch page when We go to url ====
+// ==== Fetch Images Data ====
+  const [imagesData, setImagesData] = useState([])
   const [searchID, setSearchID] = useState(setInitSearchID(location))
+
+  const getImages = async (value) => {
+    setImagesData(await getImagesData(value))
+  }
   
+  // Tracks current searchID to auto fetch page when We go to url 
   useEffect(() => {
     getImages(searchID)
-    console.log(searchID)
   }, [searchID])
 
   // implements back button in browser
@@ -31,17 +36,7 @@ export default function App () {
     setSearchID(getSearchIdFromLocationPathname(location))
   }, [location.pathname])
   
-// ==== END ====
-
-
-// ==== Fetch all Images Data ====
-  const [imagesData, setImagesData] = useState([])
-
-  const getImages = async (value) => {
-    const imagesData = await getImagesData(value)
-    setImagesData(imagesData)
-  }
-// ==== END Fetch all Images Data ====
+// ==== END Fetch Images Data ====
 
 
 // ==== Searchbar State ====
@@ -79,7 +74,7 @@ export default function App () {
     <div>
       <CalculateWindowHeightHook/>
       <AppContext.Provider 
-        value={{searchID, searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText, onSearchbarTextChanging, imagesData,  setSearchID, showResInSearchBar, pushToHistory, autoCompltions, showSuggestions, setShowSuggestions, hoveredSuggestionIdx, setHoveredSuggestionIdx, getImages}}
+        value={{searchID, searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText, onSearchbarTextChanging, imagesData, setSearchID, showResInSearchBar, pushToHistory, autoCompltions, showSuggestions, setShowSuggestions, hoveredSuggestionIdx, setHoveredSuggestionIdx, getImages}}
       >
         <AppScroolbar>
           <AnimatePresence exitBeforeEnter>
