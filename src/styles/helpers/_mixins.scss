@@ -4,7 +4,7 @@
   // center positioning
   width: 100%;
   margin: 0 auto;
-  padding: 0 7%;
+  padding: 0 5%;
 }
 
 @mixin containerSettings() {
@@ -21,23 +21,29 @@
 
 @mixin searchBarMixin($searchBarHeight, $borderRadius, $mobileBorderRadius) {
   display: inline-flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
 
   color: black;
   background-color: $lightGrey;
   width: 100%;
   height: $searchBarHeight;
-  border: solid 1px white;
   border-radius: $borderRadius;
 
   @media only screen and (max-width: 575px) {
     border-radius: $mobileBorderRadius;
   }
 
-  img {
-    width: 18px;
-    @media only screen and (max-width: 575px) {
-      width: 0px;
+  div{
+    $lupeWidth: 45px;
+    width: $lupeWidth;
+    min-width: $lupeWidth;
+    padding: 0 $lupeWidth/4;
+    &:hover{
+      cursor: pointer;
+    }
+    img {
+      height: 100%; // centers vertically
+      width: 100%;
     }
   }
 
@@ -46,16 +52,11 @@
     
     input {
       background-color: $lightGrey;
-      padding-left: 10px;
-      width: 99%;
+      width: 98%;
       height: $searchBarHeight - 2px;
       border: none;
       &:focus {
         outline-width: 0;
-      }
-
-      @media only screen and (max-width: 575px) {
-        padding-left: 0;
       }
     }
   }

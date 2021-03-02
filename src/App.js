@@ -79,7 +79,7 @@ export default function App () {
     <div>
       <CalculateWindowHeightHook/>
       <AppContext.Provider 
-        value={{searchID, searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText,   onSearchbarTextChanging, imagesData,  setImagesData,  setSearchID, showResInSearchBar, history, pushToHistory, autoCompltions, showSuggestions, setShowSuggestions, hoveredSuggestionIdx, setHoveredSuggestionIdx, search, searchID}}
+        value={{searchID, searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText,   onSearchbarTextChanging, imagesData,  setImagesData,  setSearchID, showResInSearchBar, history, pushToHistory, autoCompltions, showSuggestions, setShowSuggestions, hoveredSuggestionIdx, setHoveredSuggestionIdx, search}}
       >
         <AppScroolbar>
           <AnimatePresence exitBeforeEnter>

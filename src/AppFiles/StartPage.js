@@ -16,7 +16,7 @@ export default function Movie () {
         <div className='row container'>
           <h1>Unsplash</h1>
           <p>
-            The internet's source of
+            The internet's source of&nbsp;
             <a href='https://unsplash.com/license'>
               freely-usable images
             </a>
