@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { API_KEY, BASE_API_URL } from './Consts'
-import { getSearchIdFromLocationPathname } from './RoutesFunctions'
 
 
 //==== Fetch autoComplitions ====
@@ -33,12 +32,4 @@ export async function getImagesData(value){
 export async function getQueryData(url){
   const response = await axios.get(url)
   return response.data.results
-}
-
-
-//==== Track SearchID ====
-export function setInitSearchID(location){
-  const initMovieID = getSearchIdFromLocationPathname(location)
-  if(initMovieID === '') return '157336' // interstellar
-  return initMovieID
 }

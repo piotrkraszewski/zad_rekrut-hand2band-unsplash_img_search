@@ -5,7 +5,7 @@ import { Route, Switch, useLocation, useHistory } from 'react-router-dom'
 import { AnimatePresence } from "framer-motion"
 import { AppContext } from './AppFiles/Contexts/AppContext'
 import AppScroolbar from './utilities/Scroolbar/AppScrollbar'
-import { getImagesData, setInitSearchID, getAutoComplete } from './utilities/FetchFunctions'
+import { getImagesData, getAutoComplete } from './utilities/FetchFunctions'
 import { getSearchIdFromLocationPathname, getCurrentPageUrl } from './utilities/RoutesFunctions'
 import CalculateWindowHeightHook from './utilities/CalculateWindowHeightHook'
 import Gallery from './AppFiles/Gallery/Gallery'
@@ -20,15 +20,17 @@ export default function App () {
 
 // ==== Fetch Images Data ====
   const [imagesData, setImagesData] = useState([])
-  const [searchID, setSearchID] = useState(setInitSearchID(location))
+  const [searchID, setSearchID] = useState(getSearchIdFromLocationPathname(location))
 
   
   // Tracks current searchID to fetch page when user types url
   useEffect(() => {
     const getImages = async (value) => {
-      setImagesData(await getImagesData(value))
+      if(value.length > 0)
+        setImagesData(await getImagesData(value))
     }
     getImages(searchID)
+    console.log(searchID)
   }, [searchID])
 
   // implements back button in browser
@@ -65,7 +67,7 @@ export default function App () {
 
 // ==== Console log stuff ====
   useEffect(() => {
-    console.log({imagesData})
+    console.log(imagesData)
   }, [imagesData])
 // ==== END Console log stuff ====
 

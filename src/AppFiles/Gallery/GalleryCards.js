@@ -37,11 +37,11 @@ export default function GalleryCards() {
         >
           <Masonry>
           {imagesData.map((item) => 
-          <div className='cardContainer'>
-            <div 
-              className='Card' 
-              key={item.id} 
-            >
+          <div 
+            className='cardContainer'
+            key={item.id} 
+          >
+            <div className='Card'>
               <img // implement error handeling here or delete
                 src={item.regularImgQuality !== NOT_FOUND_POSTER_W500 
                   ? item.regularImgQuality 
