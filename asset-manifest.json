@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/zad_rekrut-hand2band-unsplash_img_search/static/css/main.095bf5e9.chunk.css",
-    "main.js": "/zad_rekrut-hand2band-unsplash_img_search/static/js/main.15ef13de.chunk.js",
-    "main.js.map": "/zad_rekrut-hand2band-unsplash_img_search/static/js/main.15ef13de.chunk.js.map",
+    "main.css": "/zad_rekrut-hand2band-unsplash_img_search/static/css/main.6c826438.chunk.css",
+    "main.js": "/zad_rekrut-hand2band-unsplash_img_search/static/js/main.a6b1e916.chunk.js",
+    "main.js.map": "/zad_rekrut-hand2band-unsplash_img_search/static/js/main.a6b1e916.chunk.js.map",
     "runtime-main.js": "/zad_rekrut-hand2band-unsplash_img_search/static/js/runtime-main.75bfb325.js",
     "runtime-main.js.map": "/zad_rekrut-hand2band-unsplash_img_search/static/js/runtime-main.75bfb325.js.map",
-    "static/js/2.22d143fb.chunk.js": "/zad_rekrut-hand2band-unsplash_img_search/static/js/2.22d143fb.chunk.js",
-    "static/js/2.22d143fb.chunk.js.map": "/zad_rekrut-hand2band-unsplash_img_search/static/js/2.22d143fb.chunk.js.map",
+    "static/js/2.69612c48.chunk.js": "/zad_rekrut-hand2band-unsplash_img_search/static/js/2.69612c48.chunk.js",
+    "static/js/2.69612c48.chunk.js.map": "/zad_rekrut-hand2band-unsplash_img_search/static/js/2.69612c48.chunk.js.map",
     "index.html": "/zad_rekrut-hand2band-unsplash_img_search/index.html",
-    "static/css/main.095bf5e9.chunk.css.map": "/zad_rekrut-hand2band-unsplash_img_search/static/css/main.095bf5e9.chunk.css.map",
-    "static/js/2.22d143fb.chunk.js.LICENSE.txt": "/zad_rekrut-hand2band-unsplash_img_search/static/js/2.22d143fb.chunk.js.LICENSE.txt",
+    "static/css/main.6c826438.chunk.css.map": "/zad_rekrut-hand2band-unsplash_img_search/static/css/main.6c826438.chunk.css.map",
+    "static/js/2.69612c48.chunk.js.LICENSE.txt": "/zad_rekrut-hand2band-unsplash_img_search/static/js/2.69612c48.chunk.js.LICENSE.txt",
     "static/media/BG_Unsplash.57fddc0a.jpg": "/zad_rekrut-hand2band-unsplash_img_search/static/media/BG_Unsplash.57fddc0a.jpg",
     "static/media/lupe.af78e9aa.svg": "/zad_rekrut-hand2band-unsplash_img_search/static/media/lupe.af78e9aa.svg",
     "static/media/no_image.2f8a70e1.png": "/zad_rekrut-hand2band-unsplash_img_search/static/media/no_image.2f8a70e1.png",
@@ -17,8 +17,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.75bfb325.js",
-    "static/js/2.22d143fb.chunk.js",
-    "static/css/main.095bf5e9.chunk.css",
-    "static/js/main.15ef13de.chunk.js"
+    "static/js/2.69612c48.chunk.js",
+    "static/css/main.6c826438.chunk.css",
+    "static/js/main.a6b1e916.chunk.js"
   ]
 }
