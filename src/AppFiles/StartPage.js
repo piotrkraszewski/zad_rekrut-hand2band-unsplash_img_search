@@ -29,9 +29,9 @@ export default function Movie () {
       </div>
 
       <img 
-        className='BgImage' 
-        src={BG_Unsplash} 
-        alt='background_image' 
+        className='BgImage'
+        src={BG_Unsplash}
+        alt='background_image'
       />
     </motion.div>
   )
