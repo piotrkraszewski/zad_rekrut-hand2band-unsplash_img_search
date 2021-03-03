@@ -6,7 +6,7 @@ import { API_KEY, BASE_API_URL } from './Consts'
 export async function getAutoComplete(input){
   const url = `https://unsplash.com/nautocomplete/${input}`
   const response = await axios.get(
-    /*'https://cors-anywhere.herokuapp.com/' + */ url
+    'https://cors-proxy-kraszer.herokuapp.com/' + url
   )
   return response.data.autocomplete
 }
