@@ -3,6 +3,7 @@
 
   .container {
     @include containerSettings;
+    color: $white;
 
     h1 {
       margin-top: 20px;

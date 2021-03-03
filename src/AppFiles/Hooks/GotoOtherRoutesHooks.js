@@ -1,24 +1,20 @@
 import { useContext } from 'react'
 import { AppContext } from '../Contexts/AppContext'
+import { useHistory } from 'react-router-dom'
 
 
 export default function GotoOtherRoutesHooks() {
-  const { setSearchbarText, oldSearchbarText,  setSearchID, pushToHistory, setShowSuggestions} = useContext(AppContext)
+  const { setSearchbarText, oldSearchbarText,  setSearchID,  setShowSuggestions} = useContext(AppContext)
+  const history = useHistory()
 
   function searchImages(text){
     if (text !== undefined) {
-      // console.log(text)
-      pushToHistory(`/s/${text}`)
+      history.push(`/s/${text}`)
       setSearchbarText(oldSearchbarText)
       setShowSuggestions(false)
       setSearchID(text)
     }
   }
 
-  const gotoStarPage = () => {
-    setSearchbarText('')
-    pushToHistory(`/`)
-  }
-
-  return [searchImages, gotoStarPage]
+  return [searchImages]
 }

@@ -1,6 +1,7 @@
 import GalleryCards from './GalleryCards'
 import GallerySearchbar from './GallerySearchbar'
 import { motion } from "framer-motion"
+import AppScroolbar from '../../utilities/Scroolbar/AppScrollbar'
 
 export default function Gallery() {
   return (
@@ -10,8 +11,10 @@ export default function Gallery() {
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
     > 
-      <GallerySearchbar />
-      <GalleryCards />
+      <AppScroolbar>
+        <GallerySearchbar />
+        <GalleryCards />
+      </AppScroolbar>
     </motion.div> 
   )
 }

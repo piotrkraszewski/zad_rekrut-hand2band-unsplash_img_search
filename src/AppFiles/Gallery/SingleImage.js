@@ -7,8 +7,6 @@ import { AnimatePresence, motion } from "framer-motion"
 export default function SingleImage({open, onClose, id}) {
   const { imagesData } = useContext(AppContext)
 
-
-
   return (
     <AnimatePresence exitBeforeEnter>
     {open && (

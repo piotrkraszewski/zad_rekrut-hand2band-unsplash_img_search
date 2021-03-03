@@ -1,33 +1,12 @@
 // === My Settings ===
+$scrollbarColor: rgb(77, 77, 77);
 
-// *** AppScroolbar ***
 .AppScroolbar{
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-
-// *** MovieSearchScroolbar ***
-.MovieSearchScroolbar {
-  position: relative;
-  height: 90vh;
-  z-index: 2;
-  border-radius: 5px;
-}
-
-.offScroolBar{
-  height: 0;
-}
-
-@media only screen and (max-width: 575px) {
-  .scroolBar{
-    height: 1250px;
-  }
-  .offScroolBar{  // potrzebne
-    height: 0;
-  }
-}
 // === END My Settings ===
 
 // === ORIGINAL CSS SCROLLBAR SETTING ====
@@ -35,8 +14,8 @@
 /*
  * Container style
  */
- .ps {
-  overflow: hidden !important;
+.ps {
+  overflow: hidden;
   overflow-anchor: none;
   -ms-overflow-style: none;
   touch-action: auto;
@@ -60,7 +39,7 @@
 
 .ps__rail-y {
   display: none;
-  opacity: 0;
+  opacity: 0.6;
   transition: background-color .2s linear, opacity .2s linear;
   -webkit-transition: background-color .2s linear, opacity .2s linear;
   width: 15px;
@@ -111,7 +90,7 @@
 }
 
 .ps__thumb-y {
-  background-color: #00FC87;
+  background-color: $scrollbarColor;
   border-radius: 6px;
   transition: background-color .2s linear, width .2s ease-in-out;
   -webkit-transition: background-color .2s linear, width .2s ease-in-out;
@@ -132,7 +111,7 @@
 .ps__rail-y:hover > .ps__thumb-y,
 .ps__rail-y:focus > .ps__thumb-y,
 .ps__rail-y.ps--clicking .ps__thumb-y {
-  background-color: #00FC87;
+  background-color: $scrollbarColor;
   width: 11px;
 }
 

@@ -13,7 +13,7 @@ export default function GalleryCards() {
   const [isImageOpen, setIsImageOpen] = useState(false)
   const [openImageID, setOpenImageID] = useState()
 
-  const openSingleImage = (e, id) => {
+  const openSingleImage = (_, id) => {
     setOpenImageID(id)
     setIsImageOpen(true)
   }

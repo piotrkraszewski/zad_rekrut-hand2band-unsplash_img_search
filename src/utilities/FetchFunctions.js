@@ -29,7 +29,7 @@ export async function getImagesData(value){
   }))
 }
 
-export async function getQueryData(url){
+async function getQueryData(url){
   const response = await axios.get(url)
   return response.data.results
 }

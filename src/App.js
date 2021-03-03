@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react'
 import './styles/main.scss'
-import { Route, Switch, useLocation, useHistory } from 'react-router-dom'
+import { Route, Switch, useLocation } from 'react-router-dom'
 import { AnimatePresence } from "framer-motion"
 import { AppContext } from './AppFiles/Contexts/AppContext'
-import AppScroolbar from './utilities/Scroolbar/AppScrollbar'
+
 import { getImagesData, getAutoComplete } from './utilities/FetchFunctions'
 import { getSearchIdFromLocationPathname, getCurrentPageUrl } from './utilities/RoutesFunctions'
 import CalculateWindowHeightHook from './utilities/CalculateWindowHeightHook'
@@ -14,14 +14,10 @@ import StartPage from './AppFiles/StartPage'
 
 export default function App () {
   const location = useLocation()  // key to app routes
-  const history = useHistory()
-  const pushToHistory = url => history.push(url)
-
 
 // ==== Fetch Images Data ====
   const [imagesData, setImagesData] = useState([])
   const [searchID, setSearchID] = useState(getSearchIdFromLocationPathname(location))
-
   
   // Tracks current searchID to fetch page when user types url
   useEffect(() => {
@@ -30,7 +26,6 @@ export default function App () {
         setImagesData(await getImagesData(value))
     }
     getImages(searchID)
-    console.log(searchID)
   }, [searchID])
 
   // implements back button in browser
@@ -42,7 +37,6 @@ export default function App () {
 
 
 // ==== Searchbar State ====
-// przydaloby sie zmienic nazwe na suggestions
   const [searchbarText, setSearchbarText] = useState('')
   const [oldSearchbarText, setOldSearchbarText] = useState('')
   const [suggestions, setSuggestions] = useState([])
@@ -64,21 +58,12 @@ export default function App () {
   }
 // ==== END Searchbar State ====
 
-
-// ==== Console log stuff ====
-  useEffect(() => {
-    console.log(imagesData)
-  }, [imagesData])
-// ==== END Console log stuff ====
-
-
   return (
     <div>
       <CalculateWindowHeightHook/>
       <AppContext.Provider 
-        value={{searchID, searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText, onSearchbarTextChanging, imagesData, setSearchID, showResInSearchBar, pushToHistory, suggestions, showSuggestions, setShowSuggestions, hoveredSuggestionIdx, setHoveredSuggestionIdx}}
+        value={{searchID, searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText, onSearchbarTextChanging, imagesData, setSearchID, showResInSearchBar, suggestions, showSuggestions, setShowSuggestions, hoveredSuggestionIdx, setHoveredSuggestionIdx}}
       >
-        <AppScroolbar>
           <AnimatePresence exitBeforeEnter>
             <Switch 
               location={location} 
@@ -88,7 +73,6 @@ export default function App () {
               <Route exact path={`/s/:${searchID}`} render={() => <Gallery/>} />
             </Switch>
           </AnimatePresence>
-        </AppScroolbar>
       </AppContext.Provider>
     </div>
   )

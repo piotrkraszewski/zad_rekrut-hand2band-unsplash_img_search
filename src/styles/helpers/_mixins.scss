@@ -21,13 +21,13 @@
 
 @mixin searchBarMixin($searchBarHeight, $borderRadius, $mobileBorderRadius) {
   display: inline-flex;
-  // flex-wrap: wrap;
 
   color: black;
   background-color: $lightGrey;
   width: 100%;
   height: $searchBarHeight;
   border-radius: $borderRadius;
+  border: 1px solid rgb(190, 190, 190);
 
   @media only screen and (max-width: 575px) {
     border-radius: $mobileBorderRadius;
