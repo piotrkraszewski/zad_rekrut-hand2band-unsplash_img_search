@@ -42,7 +42,7 @@ export default function GalleryCards() {
             <div className='Card'>
               <img
                 src={item.regularImgQuality}
-                className={item.tags.length === 0 && 'roundCorners'}
+                className={item.tags.length === 0 ? 'roundCorners' : ''}
                 alt={`poster ${item.id}`}
                 onClick={e => openSingleImage(e, item.id)}
               />
