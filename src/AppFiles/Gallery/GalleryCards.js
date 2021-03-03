@@ -1,12 +1,10 @@
 import { useState, useContext } from 'react'
+import { motion, AnimatePresence } from "framer-motion"
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import '../../styles/main.scss'
 import { AppContext } from '../Contexts/AppContext'
-import { NOT_FOUND_POSTER_W500 } from '../../utilities/Consts'
-import no_image from '../../images/no_image.png'
 import SingleImage from './SingleImage'
 import GotoOtherRoutesHooks from '../Hooks/GotoOtherRoutesHooks'
-import { motion, AnimatePresence } from "framer-motion"
 
 
 export default function GalleryCards() {
@@ -42,17 +40,15 @@ export default function GalleryCards() {
             key={item.id} 
           >
             <div className='Card'>
-              <img // implement error handeling here or delete
-                src={item.regularImgQuality !== NOT_FOUND_POSTER_W500 
-                  ? item.regularImgQuality 
-                  : no_image}
-                  className={item.tags.length === 0 && 'roundCorners'}
+              <img
+                src={item.regularImgQuality}
+                className={item.tags.length === 0 && 'roundCorners'}
                 alt={`poster ${item.id}`}
                 onClick={e => openSingleImage(e, item.id)}
               />
               <div>
-                {item.tags.map(tag => 
-                  <div 
+                {item.tags.map((tag, index) => 
+                  <div key={`${item.id}-${index}`} 
                     onClick={() => searchImages(tag)}>
                     <p>{tag}</p>
                   </div>
