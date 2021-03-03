@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/zad_rekrut-hand2band-unsplash_img_search/static/css/main.956ba937.chunk.css",
+    "main.css": "/zad_rekrut-hand2band-unsplash_img_search/static/css/main.9182760e.chunk.css",
     "main.js": "/zad_rekrut-hand2band-unsplash_img_search/static/js/main.ca479023.chunk.js",
     "main.js.map": "/zad_rekrut-hand2band-unsplash_img_search/static/js/main.ca479023.chunk.js.map",
     "runtime-main.js": "/zad_rekrut-hand2band-unsplash_img_search/static/js/runtime-main.75bfb325.js",
@@ -8,7 +8,7 @@
     "static/js/2.09fa74ee.chunk.js": "/zad_rekrut-hand2band-unsplash_img_search/static/js/2.09fa74ee.chunk.js",
     "static/js/2.09fa74ee.chunk.js.map": "/zad_rekrut-hand2band-unsplash_img_search/static/js/2.09fa74ee.chunk.js.map",
     "index.html": "/zad_rekrut-hand2band-unsplash_img_search/index.html",
-    "static/css/main.956ba937.chunk.css.map": "/zad_rekrut-hand2band-unsplash_img_search/static/css/main.956ba937.chunk.css.map",
+    "static/css/main.9182760e.chunk.css.map": "/zad_rekrut-hand2band-unsplash_img_search/static/css/main.9182760e.chunk.css.map",
     "static/js/2.09fa74ee.chunk.js.LICENSE.txt": "/zad_rekrut-hand2band-unsplash_img_search/static/js/2.09fa74ee.chunk.js.LICENSE.txt",
     "static/media/BG_Unsplash.57fddc0a.jpg": "/zad_rekrut-hand2band-unsplash_img_search/static/media/BG_Unsplash.57fddc0a.jpg",
     "static/media/lupe.af78e9aa.svg": "/zad_rekrut-hand2band-unsplash_img_search/static/media/lupe.af78e9aa.svg",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.75bfb325.js",
     "static/js/2.09fa74ee.chunk.js",
-    "static/css/main.956ba937.chunk.css",
+    "static/css/main.9182760e.chunk.css",
     "static/js/main.ca479023.chunk.js"
   ]
 }
