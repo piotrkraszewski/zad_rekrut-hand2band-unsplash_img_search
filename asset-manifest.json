@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/zad_rekrut-hand2band-unsplash_img_search/static/css/main.785ca5c8.chunk.css",
-    "main.js": "/zad_rekrut-hand2band-unsplash_img_search/static/js/main.5467ba55.chunk.js",
-    "main.js.map": "/zad_rekrut-hand2band-unsplash_img_search/static/js/main.5467ba55.chunk.js.map",
+    "main.js": "/zad_rekrut-hand2band-unsplash_img_search/static/js/main.dd8c44c2.chunk.js",
+    "main.js.map": "/zad_rekrut-hand2band-unsplash_img_search/static/js/main.dd8c44c2.chunk.js.map",
     "runtime-main.js": "/zad_rekrut-hand2band-unsplash_img_search/static/js/runtime-main.75bfb325.js",
     "runtime-main.js.map": "/zad_rekrut-hand2band-unsplash_img_search/static/js/runtime-main.75bfb325.js.map",
     "static/js/2.09fa74ee.chunk.js": "/zad_rekrut-hand2band-unsplash_img_search/static/js/2.09fa74ee.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.75bfb325.js",
     "static/js/2.09fa74ee.chunk.js",
     "static/css/main.785ca5c8.chunk.css",
-    "static/js/main.5467ba55.chunk.js"
+    "static/js/main.dd8c44c2.chunk.js"
   ]
 }
