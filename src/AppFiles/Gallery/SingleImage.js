@@ -8,6 +8,7 @@ export default function SingleImage({open, onClose, id}) {
   const { imagesData } = useContext(AppContext)
 
   return (
+    <div className='SingleImageContainer'>
     <AnimatePresence exitBeforeEnter>
     {open && (
       <motion.div 
@@ -62,5 +63,6 @@ export default function SingleImage({open, onClose, id}) {
           </div>
       </motion.div>)}
     </AnimatePresence>
+    </div>
   )
 }
