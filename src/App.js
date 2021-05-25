@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react'
 import './styles/main.scss'
 import { Route, Switch, useLocation } from 'react-router-dom'
@@ -18,7 +17,7 @@ export default function App () {
 // ==== Fetch Images Data ====
   const [imagesData, setImagesData] = useState([])
   const [searchID, setSearchID] = useState(getSearchIdFromLocationPathname(location))
-  
+
   // Tracks current searchID to fetch page when user types url
   useEffect(() => {
     const getImages = async (value) => {
@@ -32,7 +31,7 @@ export default function App () {
   useEffect(() => {
     setSearchID(getSearchIdFromLocationPathname(location))
   }, [location.pathname])
-  
+
 // ==== END Fetch Images Data ====
 
 
@@ -61,12 +60,12 @@ export default function App () {
   return (
     <div>
       <CalculateWindowHeightHook/>
-      <AppContext.Provider 
+      <AppContext.Provider
         value={{searchID, searchbarText, setSearchbarText, oldSearchbarText, setOldSearchbarText, onSearchbarTextChanging, imagesData, setSearchID, showResInSearchBar, suggestions, showSuggestions, setShowSuggestions, hoveredSuggestionIdx, setHoveredSuggestionIdx}}
       >
           <AnimatePresence exitBeforeEnter>
-            <Switch 
-              location={location} 
+            <Switch
+              location={location}
               key={getCurrentPageUrl(location)}
             >
               <Route exact path='/' render={() => <StartPage/>} />
